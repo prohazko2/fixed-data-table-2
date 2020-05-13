@@ -4,6 +4,5 @@ PATH=$(npm bin):$PATH
 
 rm -rf ./dist
 
-NODE_ENV=production
-webpack
-COMPRESS=1 webpack
+NODE_ENV=production webpack
+NODE_ENV=production COMPRESS=1 webpack

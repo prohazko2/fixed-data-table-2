@@ -59,7 +59,7 @@ plugins.push(
 );
 
 module.exports = {
-  mode: isDev ? 'development' : 'production',
+  mode: isDev === 'true' ? 'development' : 'production',
   resolve: {
     plugins: [resolvers.resolveHasteDefines]
   },
@@ -77,7 +77,7 @@ module.exports = {
             loader: MiniCssExtractPlugin.loader,
             options: {
               // only enable hot in development
-              hmr: isDev,
+              hmr: isDev === 'true',
               fallback: 'style-loader'
             }
           },
@@ -109,6 +109,12 @@ module.exports = {
       commonjs: 'react-dom',
       commonjs2: 'react-dom',
       amd: 'react-dom',
+    },
+    'prop-types': {
+      root: 'PropTypes',
+      commonjs: 'prop-types',
+      commonjs2: 'prop-types',
+      amd: 'prop-types',
     },
   },
 
